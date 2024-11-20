@@ -3,7 +3,9 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
+    <link rel="icon" href="logoODS.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
@@ -25,12 +27,68 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_7e61bfa3ba9f785fe732a562fde7ea80 {
+                body{
+                    background-color:#000000;
+                    display: flex;
+                }
+                #map_db7678ca6f792666ad6a0d0a0879e0af {
                     position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
+                    width: 90.0%;
+                    height: 90.0%;
                     left: 0.0%;
                     top: 0.0%;
+                    border-radius: 10px;
+                }
+                #section-map{
+                    width: 50%;
+                    height: 100%;
+                    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(banner.jpg);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: -8px 0 12px rgba(255, 255, 255, 0.1);
+                }
+                #section-text{
+                    width: 50%;
+                    height: 100%;
+
+                }
+                #banner{
+                    width: 70px;
+                    height: 70px;
+                    margin-left: 25px;
+                }
+                p{
+                    margin-left: 60px;
+                    margin-top: 50px;
+                    width: 70%;
+                    color: #fff;
+                    font-size: 17px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 300;
+                    font-style: normal;
+                }
+                #box-img{
+                    width: 413px;
+                    height: 70px;
+                    border-radius: 0 25px 25px 0;
+                    background-color: #fff;
+                    margin-top: 35px;
+                    display: flex;
+                    gap: 5px;
+                }
+                #box-img h1{
+                    color: #000000;
+                    width: 300px;font-family: "Quicksand", sans-serif;
+                    font-optical-sizing: auto;
+                    font-weight: weight;
+                    font-style: normal;
+
+                }
+                footer{
+                    text-align: center;
+                    margin-top: 45px;
+                    color: #555454;
                 }
                 .leaflet-container { font-size: 1rem; }
             </style>
@@ -41,16 +99,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
 </head>
 <body>
-    
-    
-            <div class="folium-map" id="map_7e61bfa3ba9f785fe732a562fde7ea80" ></div>
-        
+        <div id="section-text">
+            <div id="box-img"> 
+                    <img src="logoODS.png" alt="" id="banner">
+                    <h1>ODS 1 - Mapa Solidário</h1>
+            </div>
+            <p>
+                <strong style="color: rgb(236, 7, 7);"> ODS 1 (Objetivo de Desenvolvimento Sustentável 1) é "Erradicar a pobreza em todas as suas formas, em todos os lugares".</strong> 
+                Este objetivo busca eliminar a pobreza extrema e garantir que todas as pessoas, independentemente de sua condição, 
+                tenham acesso a recursos básicos como alimentação, saúde, educação e condições de vida dignas.
+            </p>
+            <p>
+                Nosso site tem como objetivo contribuir para a erradicação da pobreza, alinhando-se à ODS 1, ao fornecer um serviço inovador e acessível. 
+                Por meio de um mapa interativo, o site localiza ONGs de diversas categorias, como educação, saúde, alimentação, cultura, entre outras. 
+                Cada localidade exibida oferece uma descrição, além da opção de acessar a plataforma de cada ONG para obter mais informações. 
+                O mapa também permite calcular a distância entre dois pontos, facilitando a interação entre as pessoas e as organizações.
+            </p>
+
+            <footer>Desenvolvido por: Thiago Rezende, Erick Pereira, Riandro Deian, Luiz Eduardo, Victor Hugo.&copy;</footer>
+        </div>
+        <div id="section-map">
+            <div class="folium-map" id="map_db7678ca6f792666ad6a0d0a0879e0af" ></div>
+        </div>
 </body>
 <script>
     
     
-            var map_7e61bfa3ba9f785fe732a562fde7ea80 = L.map(
-                "map_7e61bfa3ba9f785fe732a562fde7ea80",
+            var map_db7678ca6f792666ad6a0d0a0879e0af = L.map(
+                "map_db7678ca6f792666ad6a0d0a0879e0af",
                 {
                     center: [-15.80257, -47.90094],
                     crs: L.CRS.EPSG3857,
@@ -59,44 +135,1033 @@
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            L.control.scale().addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
 
             
 
         
     
-            var tile_layer_9fbef1ff105e0bc2ca7c6a453cb245f7 = L.tileLayer(
+            var tile_layer_d483b8a3f21948b9f83be0d9e1f143df = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_9fbef1ff105e0bc2ca7c6a453cb245f7.addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            tile_layer_d483b8a3f21948b9f83be0d9e1f143df.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
         
     
-            var tile_layer_6c7874b46f33bec25279025767e2104f = L.tileLayer(
+            var tile_layer_00895c768ca5dac557ade5d311d6d715 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
-            var mini_map_dd4478eea2d782f514ca554aedd095d2 = new L.Control.MiniMap(
-                tile_layer_6c7874b46f33bec25279025767e2104f,
+            var mini_map_9097922eba0796cb32e3adf3de7c1c95 = new L.Control.MiniMap(
+                tile_layer_00895c768ca5dac557ade5d311d6d715,
                 {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
             );
-            map_7e61bfa3ba9f785fe732a562fde7ea80.addControl(mini_map_dd4478eea2d782f514ca554aedd095d2);
+            map_db7678ca6f792666ad6a0d0a0879e0af.addControl(mini_map_9097922eba0796cb32e3adf3de7c1c95);
         
     
             L.control.fullscreen(
                 {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            ).addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
         
     
-            var poly_line_fc2bd59b1682f4f4d451b7d10a239b7e = L.polyline(
+            var feature_group_c590ca7c9f46efa2f806eed48a754892 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_a5fb09105d978500376e860576995061 = L.marker(
+                [-15.89047, -48.11012],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_d3874ee672f18656464a1271e0d9613b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a5fb09105d978500376e860576995061.setIcon(icon_d3874ee672f18656464a1271e0d9613b);
+        
+    
+        var popup_b0af2d478856e01880e6c25bc05c68b4 = L.popup({"maxWidth": 300});
+
+        
+            
+        var html_1f63ae9c367e7df5c3b5f0642a0cc1b3 = $(`<div id="html_1f63ae9c367e7df5c3b5f0642a0cc1b3" style="width: 100.0%; height: 100.0%;"><div style="width: 200px;"><h4>Casa Azul</h4><p style="font-size: 16px; color: black;"><b>Distância:</b> 24.43 km</p><a href="https://www.casazulfelipeaugusto.org.br/" target="_blank">Visitar site</a></div></div>`)[0];
+                popup_b0af2d478856e01880e6c25bc05c68b4.setContent(html_1f63ae9c367e7df5c3b5f0642a0cc1b3);
+            
+        
+
+        marker_a5fb09105d978500376e860576995061.bindPopup(popup_b0af2d478856e01880e6c25bc05c68b4)
+        ;
+
+        
+    
+    
+            var marker_fd0dfc3fadeada15bd886302a56a7e3d = L.marker(
+                [-15.8176, -48.09161],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_b3bf151346a82ae41bbac012a6095bb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fd0dfc3fadeada15bd886302a56a7e3d.setIcon(icon_b3bf151346a82ae41bbac012a6095bb3);
+        
+    
+        var popup_9b4d6b5037c52e2b8ddecde7edca1523 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_abc0c37e97379bf7182d5fe89c85d262 = $(`<div id="html_abc0c37e97379bf7182d5fe89c85d262" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto do Carinho</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 20.50 km</p>         <a href="https://www.institutodocarinho.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_9b4d6b5037c52e2b8ddecde7edca1523.setContent(html_abc0c37e97379bf7182d5fe89c85d262);
+            
+        
+
+        marker_fd0dfc3fadeada15bd886302a56a7e3d.bindPopup(popup_9b4d6b5037c52e2b8ddecde7edca1523)
+        ;
+
+        
+    
+    
+            var marker_6e95dd30da755c318d4a68245016702a = L.marker(
+                [-15.80045, -48.10632],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_da2938a31483eaa1a74c8a1ac92d0d53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6e95dd30da755c318d4a68245016702a.setIcon(icon_da2938a31483eaa1a74c8a1ac92d0d53);
+        
+    
+        var popup_f93b82e31e60ac54704b58b00547e14c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc5046805c5cff46723d34ca882f2275 = $(`<div id="html_bc5046805c5cff46723d34ca882f2275" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Lar de São José</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 22.01 km</p>         <a href="https://lardesaojose.org/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_f93b82e31e60ac54704b58b00547e14c.setContent(html_bc5046805c5cff46723d34ca882f2275);
+            
+
+        marker_6e95dd30da755c318d4a68245016702a.bindPopup(popup_f93b82e31e60ac54704b58b00547e14c)
+        ;
+
+        
+    
+    
+            var marker_1176aa1fab6cc325900dfb4c0d143fc4 = L.marker(
+                [-15.74881, -47.89895],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_15ac961f4311b2d1f247dfebc2a782f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1176aa1fab6cc325900dfb4c0d143fc4.setIcon(icon_15ac961f4311b2d1f247dfebc2a782f8);
+        
+    
+        var popup_e72592d92628d74520a9648f5bde67f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e741cabac2e1764e9946b630d4cae2ac = $(`<div id="html_e741cabac2e1764e9946b630d4cae2ac" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Casa de Ismael</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 5.95 km</p>         <a href="https://www.casadeismael.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_e72592d92628d74520a9648f5bde67f7.setContent(html_e741cabac2e1764e9946b630d4cae2ac);
+            
+        
+
+        marker_1176aa1fab6cc325900dfb4c0d143fc4.bindPopup(popup_e72592d92628d74520a9648f5bde67f7)
+        ;
+
+        
+    
+    
+            var marker_eb378230c98fa9c96bd6009229a31920 = L.marker(
+                [-15.64365, -47.82247],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_dce0a7c2b4effe1ebb782c0c7d971820 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eb378230c98fa9c96bd6009229a31920.setIcon(icon_dce0a7c2b4effe1ebb782c0c7d971820);
+        
+    
+        var popup_1378842c60015b6c218e8b4148803513 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e28e215ed746d71de89726dc6030d391 = $(`<div id="html_e28e215ed746d71de89726dc6030d391" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Centro Comunitário Semente de Esperança</h4>         <p style="font-size: 16px color: black;"><b>Distância:</b> 19.49 km</p>         <a href="https://sementeesperanca.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_1378842c60015b6c218e8b4148803513.setContent(html_e28e215ed746d71de89726dc6030d391);
+            
+        
+
+        marker_eb378230c98fa9c96bd6009229a31920.bindPopup(popup_1378842c60015b6c218e8b4148803513)
+        ;
+
+        
+    
+    
+            var marker_c65947a2aa90a53ef9ee51e079317210 = L.marker(
+                [-15.82735, -48.09153],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_6549b4e1b52b6f70ff480020dacf563f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c65947a2aa90a53ef9ee51e079317210.setIcon(icon_6549b4e1b52b6f70ff480020dacf563f);
+        
+    
+        var popup_b6cb2aa0dec2a950d9996cba0e5eafc5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6bad0c23b888b7dc1d63706b0f1e7f84 = $(`<div id="html_6bad0c23b888b7dc1d63706b0f1e7f84" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>CRECHE FREDERICO OZANAM</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 20.60 km</p>         <a href="https://crechefredericoozanam.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_b6cb2aa0dec2a950d9996cba0e5eafc5.setContent(html_6bad0c23b888b7dc1d63706b0f1e7f84);
+            
+        
+
+        marker_c65947a2aa90a53ef9ee51e079317210.bindPopup(popup_b6cb2aa0dec2a950d9996cba0e5eafc5)
+        ;
+
+        
+    
+    
+            var marker_f2f8e3288322bf38cc68dd81f2a690c9 = L.marker(
+                [-15.74771, -47.89971],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_bc8e2cedbb002bea4d96568380c0c38b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f2f8e3288322bf38cc68dd81f2a690c9.setIcon(icon_bc8e2cedbb002bea4d96568380c0c38b);
+        
+    
+        var popup_f617f9390c27b0780e51835411495bd4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3f4c1f5a912358a82de65a8fcfbc0828 = $(`<div id="html_3f4c1f5a912358a82de65a8fcfbc0828" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Berço da Cidadania</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 6.07 km</p>         <a href="https://www.bercodacidadania.ong.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_f617f9390c27b0780e51835411495bd4.setContent(html_3f4c1f5a912358a82de65a8fcfbc0828);
+            
+        
+
+        marker_f2f8e3288322bf38cc68dd81f2a690c9.bindPopup(popup_f617f9390c27b0780e51835411495bd4)
+        ;
+
+        
+    
+    
+            var marker_d801e3192ff223dd190fd92fe3ac56d0 = L.marker(
+                [-15.79987, -48.10653],
+                {}
+            ).addTo(feature_group_c590ca7c9f46efa2f806eed48a754892);
+        
+    
+            var icon_0340f2db3de9ff8d1492828e7c4b5529 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d801e3192ff223dd190fd92fe3ac56d0.setIcon(icon_0340f2db3de9ff8d1492828e7c4b5529);
+        
+    
+        var popup_c9e62130b4e2a72252e58ad7dd16540d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d3f26336dd2275a1fc93b6b3aa97c20 = $(`<div id="html_6d3f26336dd2275a1fc93b6b3aa97c20" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>LAR DE SÃO JOSÉ</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 22.03 km</p>         <a href="https://lardesaojose.org/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_c9e62130b4e2a72252e58ad7dd16540d.setContent(html_6d3f26336dd2275a1fc93b6b3aa97c20);
+            
+        
+
+        marker_d801e3192ff223dd190fd92fe3ac56d0.bindPopup(popup_c9e62130b4e2a72252e58ad7dd16540d)
+        ;
+
+        
+    
+    
+            feature_group_c590ca7c9f46efa2f806eed48a754892.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var feature_group_fc3d1d2d90fe75de340ae8969df2c15e = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_d8d093618d1884b76012e0502beab0a9 = L.marker(
+                [-15.80078, -48.10743],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_00892d5dd8ea7a5f4ca657a84aff2230 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d8d093618d1884b76012e0502beab0a9.setIcon(icon_00892d5dd8ea7a5f4ca657a84aff2230);
+        
+    
+        var popup_c683eb1f9c492cda1e50b3db50670375 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d37a8d94f8810b44317ddbee9824d729 = $(`<div id="html_d37a8d94f8810b44317ddbee9824d729" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>CASA DA CRIANÇA BATUÍRA</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 22.12 km</p>         <a href="https://www.ccbatuira.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_c683eb1f9c492cda1e50b3db50670375.setContent(html_d37a8d94f8810b44317ddbee9824d729);
+            
+        
+
+        marker_d8d093618d1884b76012e0502beab0a9.bindPopup(popup_c683eb1f9c492cda1e50b3db50670375)
+        ;
+
+        
+    
+    
+            var marker_2923a504a22fbcf2b2075a90f6132344 = L.marker(
+                [-15.77814, -47.99886],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_2dd4dc5ddc05633deefcf9976cf914c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2923a504a22fbcf2b2075a90f6132344.setIcon(icon_2dd4dc5ddc05633deefcf9976cf914c9);
+        
+    
+        var popup_30958edc4e5060eb25f63746dbbb2369 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8ff218d6192480fce6e1cc96e65b0ae = $(`<div id="html_e8ff218d6192480fce6e1cc96e65b0ae" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Social Bom Samaritano</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 10.83 km</p>         <a href="https://www.instagram.com/ibs.social/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_30958edc4e5060eb25f63746dbbb2369.setContent(html_e8ff218d6192480fce6e1cc96e65b0ae);
+            
+        
+
+        marker_2923a504a22fbcf2b2075a90f6132344.bindPopup(popup_30958edc4e5060eb25f63746dbbb2369)
+        ;
+
+        
+    
+    
+            var marker_83b07dbbc3dcd42d860d5fe9423537ff = L.marker(
+                [-15.67003, -47.64807],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_2d1c9684cd209a864900a071e72aa1da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_83b07dbbc3dcd42d860d5fe9423537ff.setIcon(icon_2d1c9684cd209a864900a071e72aa1da);
+        
+    
+        var popup_06993449ed6899493f5462ee856e9fbd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9eb8b793973b615396c9ad5a3d408e85 = $(`<div id="html_9eb8b793973b615396c9ad5a3d408e85" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Casa Transitória de Brasília</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 30.82 km</p>         <a href="https://casatransitoriadebrasilia.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_06993449ed6899493f5462ee856e9fbd.setContent(html_9eb8b793973b615396c9ad5a3d408e85);
+            
+        
+
+        marker_83b07dbbc3dcd42d860d5fe9423537ff.bindPopup(popup_06993449ed6899493f5462ee856e9fbd)
+        ;
+
+        
+    
+    
+            var marker_f383ffdae2a09fe564279e0691b9aa4e = L.marker(
+                [-15.74767, -47.90067],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_5bdd91c9489bcb9a2e25a0f28ec1b988 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f383ffdae2a09fe564279e0691b9aa4e.setIcon(icon_5bdd91c9489bcb9a2e25a0f28ec1b988);
+        
+    
+        var popup_ffa899c907da5c7772fd4d6115228daa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eeec17b7e1258b97a53b8d9a437e2dff = $(`<div id="html_eeec17b7e1258b97a53b8d9a437e2dff" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Tocar</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 6.08 km</p>         <a href="https://institutotocar.org/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_ffa899c907da5c7772fd4d6115228daa.setContent(html_eeec17b7e1258b97a53b8d9a437e2dff);
+            
+        
+
+        marker_f383ffdae2a09fe564279e0691b9aa4e.bindPopup(popup_ffa899c907da5c7772fd4d6115228daa)
+        ;
+
+        
+    
+    
+            var marker_939e51ea5d23e180251423448f3e78cc = L.marker(
+                [-16.01587, -48.13727],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_334ab927ee93bfd63784eb2ce58e3639 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_939e51ea5d23e180251423448f3e78cc.setIcon(icon_334ab927ee93bfd63784eb2ce58e3639);
+        
+    
+        var popup_d5b5806425c4344b9ffa1361619305e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_82c0491771b479a6221ed46ccc75a470 = $(`<div id="html_82c0491771b479a6221ed46ccc75a470" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Abrigo Flora e Fauna</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 34.61 km</p>         <a href="https://www.instagram.com/abrigofloraefauna/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_d5b5806425c4344b9ffa1361619305e9.setContent(html_82c0491771b479a6221ed46ccc75a470);
+            
+        
+
+        marker_939e51ea5d23e180251423448f3e78cc.bindPopup(popup_d5b5806425c4344b9ffa1361619305e9)
+        ;
+
+        
+    
+    
+            var marker_a5d569dc6f0dcd48cd82ef8b48177786 = L.marker(
+                [-15.68625, -47.92592],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_b8b0a64ae1a0bf617264bf273f91df77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a5d569dc6f0dcd48cd82ef8b48177786.setIcon(icon_b8b0a64ae1a0bf617264bf273f91df77);
+        
+    
+        var popup_2aa7f237ffc32f9427aaa437bc8ade6d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a97c507cfa397742b25048ecbd7706f5 = $(`<div id="html_a97c507cfa397742b25048ecbd7706f5" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Amigos da Vida</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 13.15 km</p>         <a href="https://www.amigos.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_2aa7f237ffc32f9427aaa437bc8ade6d.setContent(html_a97c507cfa397742b25048ecbd7706f5);
+            
+        
+
+        marker_a5d569dc6f0dcd48cd82ef8b48177786.bindPopup(popup_2aa7f237ffc32f9427aaa437bc8ade6d)
+        ;
+
+        
+    
+    
+            var marker_4284b4a2ec565821c95555ded7f0d595 = L.marker(
+                [-15.84205, -47.02225],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_2f76f3df72a6ffbf1391a59798d9e83a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4284b4a2ec565821c95555ded7f0d595.setIcon(icon_2f76f3df72a6ffbf1391a59798d9e83a);
+        
+    
+        var popup_504e6f862fef581431e68d063715b682 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9145f49d8f2a1a10931a343423a4be63 = $(`<div id="html_9145f49d8f2a1a10931a343423a4be63" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação Brasiliense de Apoio ao Paciente de Câncer (ABAC)</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 94.23 km</p>         <a href="https://abacluz.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_504e6f862fef581431e68d063715b682.setContent(html_9145f49d8f2a1a10931a343423a4be63);
+            
+        
+
+        marker_4284b4a2ec565821c95555ded7f0d595.bindPopup(popup_504e6f862fef581431e68d063715b682)
+        ;
+
+        
+    
+    
+            var marker_2ef9246f089c364b33ccb39f19cc490c = L.marker(
+                [-15.78946, -47.88531],
+                {}
+            ).addTo(feature_group_fc3d1d2d90fe75de340ae8969df2c15e);
+        
+    
+            var icon_7e86a1e60962c39dbbe72eaf9376cfed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2ef9246f089c364b33ccb39f19cc490c.setIcon(icon_7e86a1e60962c39dbbe72eaf9376cfed);
+        
+    
+        var popup_990775a31af2249cf12e9e850457195f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88c012a47592ea804eeb5460ed0f6a60 = $(`<div id="html_88c012a47592ea804eeb5460ed0f6a60" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>ONG Vida Positiva</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 2.22 km</p>         <a href="https://www.instagram.com/vidapositivadf/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_990775a31af2249cf12e9e850457195f.setContent(html_88c012a47592ea804eeb5460ed0f6a60);
+            
+        
+
+        marker_2ef9246f089c364b33ccb39f19cc490c.bindPopup(popup_990775a31af2249cf12e9e850457195f)
+        ;
+
+        
+    
+    
+            feature_group_fc3d1d2d90fe75de340ae8969df2c15e.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var feature_group_904205aaff2a92f352b1ed6784353395 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_b5a3c7d6e669201796b9d75c96875038 = L.marker(
+                [-15.81243, -48.01925],
+                {}
+            ).addTo(feature_group_904205aaff2a92f352b1ed6784353395);
+        
+    
+            var icon_c23f7c82307cd8a8d7dc85edcaae637d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b5a3c7d6e669201796b9d75c96875038.setIcon(icon_c23f7c82307cd8a8d7dc85edcaae637d);
+        
+    
+        var popup_e01bc2786f1a48dce3d259ad55446f34 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_37684fc6540bacccecb02bdac33d206c = $(`<div id="html_37684fc6540bacccecb02bdac33d206c" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Menos de Mim</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 12.72 km</p>         <a href="https://menosdemim.apoiar.co/2" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_e01bc2786f1a48dce3d259ad55446f34.setContent(html_37684fc6540bacccecb02bdac33d206c);
+            
+        
+
+        marker_b5a3c7d6e669201796b9d75c96875038.bindPopup(popup_e01bc2786f1a48dce3d259ad55446f34)
+        ;
+
+        
+    
+    
+            var marker_b09e16beba9eca2f73e7051e3ba7fa68 = L.marker(
+                [-15.78318, -47.88298],
+                {}
+            ).addTo(feature_group_904205aaff2a92f352b1ed6784353395);
+        
+    
+            var icon_68c0880b93f0c7f343cd2316d9913bcc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b09e16beba9eca2f73e7051e3ba7fa68.setIcon(icon_68c0880b93f0c7f343cd2316d9913bcc);
+        
+    
+        var popup_085111a21b9708f5f7ff417ff5d80eea = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5ef8170e989f227741bf61c6818a2483 = $(`<div id="html_5ef8170e989f227741bf61c6818a2483" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Projeto Dividir</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 2.88 km</p>         <a href="https://coepbrasil.org.br/fome-projeto-dividir/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_085111a21b9708f5f7ff417ff5d80eea.setContent(html_5ef8170e989f227741bf61c6818a2483);
+            
+        
+
+        marker_b09e16beba9eca2f73e7051e3ba7fa68.bindPopup(popup_085111a21b9708f5f7ff417ff5d80eea)
+        ;
+
+        
+    
+    
+            var marker_45fbd35ff1836b8d2701556136829062 = L.marker(
+                [-15.81141, -47.97513],
+                {}
+            ).addTo(feature_group_904205aaff2a92f352b1ed6784353395);
+        
+    
+            var icon_99bca170b8444693f1fbc74253525959 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_45fbd35ff1836b8d2701556136829062.setIcon(icon_99bca170b8444693f1fbc74253525959);
+        
+    
+        var popup_6119569f263a23ce36098224ba0341ee = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5d67c7004ea1583531caf5cdd88806e0 = $(`<div id="html_5d67c7004ea1583531caf5cdd88806e0" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Adenilson Cruz</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 8.01 km</p>         <a href="https://linktr.ee/InstitutoAdenilsonCruz?utm_source=linktree_profile_share&ltsid=df9ffc9f-ce8b-44b4-9c33-1f93ec470a62" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_6119569f263a23ce36098224ba0341ee.setContent(html_5d67c7004ea1583531caf5cdd88806e0);
+            
+        
+
+        marker_45fbd35ff1836b8d2701556136829062.bindPopup(popup_6119569f263a23ce36098224ba0341ee)
+        ;
+
+        
+    
+    
+            var marker_59fd36e3c11edd62d2a0f70c9b7a1fd0 = L.marker(
+                [-15.77815, -47.99836],
+                {}
+            ).addTo(feature_group_904205aaff2a92f352b1ed6784353395);
+        
+    
+            var icon_5f7bad0ac5de6b8740f9a7ceab6b336e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_59fd36e3c11edd62d2a0f70c9b7a1fd0.setIcon(icon_5f7bad0ac5de6b8740f9a7ceab6b336e);
+        
+    
+        var popup_2f887f6fe49b99c29a6e6af579cbc7d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6ac196ab09715f4904282758185271c5 = $(`<div id="html_6ac196ab09715f4904282758185271c5" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Bom Samaritano</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 10.78 km</p>         <a href="https://www.instagram.com/instituto_bom_samaritano/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_2f887f6fe49b99c29a6e6af579cbc7d2.setContent(html_6ac196ab09715f4904282758185271c5);
+            
+        
+
+        marker_59fd36e3c11edd62d2a0f70c9b7a1fd0.bindPopup(popup_2f887f6fe49b99c29a6e6af579cbc7d2)
+        ;
+
+        
+    
+    
+            feature_group_904205aaff2a92f352b1ed6784353395.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var feature_group_b429da5269e5e229e506176dd23a1e37 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_29ab3357afd7f6f833fbdac364d34f12 = L.marker(
+                [-15.88858, -48.10162],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_c836c9d742dbe54076cf98d902f4471d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_29ab3357afd7f6f833fbdac364d34f12.setIcon(icon_c836c9d742dbe54076cf98d902f4471d);
+        
+    
+        var popup_7b091f3ad0787fce069059449d358d70 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f6bcd32081fb9b2224c359d443f149f1 = $(`<div id="html_f6bcd32081fb9b2224c359d443f149f1" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>SHALKE12</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 23.51 km</p>         <a href="https://shalke12.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_7b091f3ad0787fce069059449d358d70.setContent(html_f6bcd32081fb9b2224c359d443f149f1);
+            
+        
+
+        marker_29ab3357afd7f6f833fbdac364d34f12.bindPopup(popup_7b091f3ad0787fce069059449d358d70)
+        ;
+
+        
+    
+    
+            var marker_b6e7e9a90e178dad05c663adb13d70be = L.marker(
+                [-15.64378, -47.82077],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_3ba79184228e2b41a3d655bef0488407 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b6e7e9a90e178dad05c663adb13d70be.setIcon(icon_3ba79184228e2b41a3d655bef0488407);
+        
+    
+        var popup_4ec6aea6afab4b2e627f0edde2ff3cf7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f0f1eb2f6df5d1709b03d793a58da35d = $(`<div id="html_f0f1eb2f6df5d1709b03d793a58da35d" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação das Mulheres de Sobradinho II</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 19.56 km</p>         <a href="https://www.facebook.com/p/Associa%C3%A7%C3%A3o-das-Mulheres-de-Sobradinho-II-100080885431132/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_4ec6aea6afab4b2e627f0edde2ff3cf7.setContent(html_f0f1eb2f6df5d1709b03d793a58da35d);
+            
+        
+
+        marker_b6e7e9a90e178dad05c663adb13d70be.bindPopup(popup_4ec6aea6afab4b2e627f0edde2ff3cf7)
+        ;
+
+        
+    
+    
+            var marker_2df953f97405d0d5e7f7bfefb89b8dcc = L.marker(
+                [-15.70916, -47.87607],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_bd673401a7b83fe47a758cbfa0b2eb91 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2df953f97405d0d5e7f7bfefb89b8dcc.setIcon(icon_bd673401a7b83fe47a758cbfa0b2eb91);
+        
+    
+        var popup_54173a6901b90bb639107156c16f9a59 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5c42582b29e8d6a1f30109f41bddfa9f = $(`<div id="html_5c42582b29e8d6a1f30109f41bddfa9f" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Migrações e Direitos Humanos (IMDH)</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 10.67 km</p>         <a href="https://www.migrante.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_54173a6901b90bb639107156c16f9a59.setContent(html_5c42582b29e8d6a1f30109f41bddfa9f);
+            
+        
+
+        marker_2df953f97405d0d5e7f7bfefb89b8dcc.bindPopup(popup_54173a6901b90bb639107156c16f9a59)
+        ;
+
+        
+    
+    
+            var marker_9bc2a9bef0a860b7239e2630b8b1f24f = L.marker(
+                [-15.83023, -48.09816],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_ae1346ca259b9275fe9057d21774e203 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9bc2a9bef0a860b7239e2630b8b1f24f.setIcon(icon_ae1346ca259b9275fe9057d21774e203);
+        
+    
+        var popup_aaf474dff0363e0f5ee87790bbd84901 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cc27076769e7baafc80db9b7e327c739 = $(`<div id="html_cc27076769e7baafc80db9b7e327c739" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação Dos Idosos Da Ceilândia</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 21.35 km</p>         <a href="https://www.idososdaceilandia.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_aaf474dff0363e0f5ee87790bbd84901.setContent(html_cc27076769e7baafc80db9b7e327c739);
+            
+        
+
+        marker_9bc2a9bef0a860b7239e2630b8b1f24f.bindPopup(popup_aaf474dff0363e0f5ee87790bbd84901)
+        ;
+
+        
+    
+    
+            var marker_fa06c0b9dd1532dc8f7b8e94ed22d1b0 = L.marker(
+                [-15.82046, -48.08388],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_3444b6356a32fb835ae9304e6514ad41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fa06c0b9dd1532dc8f7b8e94ed22d1b0.setIcon(icon_3444b6356a32fb835ae9304e6514ad41);
+        
+    
+        var popup_7dcdbf03876327261e9a4e58515dab4b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_361a7638534db33a73310053d1cf9630 = $(`<div id="html_361a7638534db33a73310053d1cf9630" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação Dos Idosos De Taguatinga</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 19.70 km</p>         <a href="https://www.instagram.com/idososdetaguatinga/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_7dcdbf03876327261e9a4e58515dab4b.setContent(html_361a7638534db33a73310053d1cf9630);
+            
+        
+
+        marker_fa06c0b9dd1532dc8f7b8e94ed22d1b0.bindPopup(popup_7dcdbf03876327261e9a4e58515dab4b)
+        ;
+
+        
+    
+    
+            var marker_eacef3e74512f5a46a5a1aa9d9b56b2f = L.marker(
+                [-15.80645, -47.90491],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_593ce7efaa247fe857de721726b3226f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eacef3e74512f5a46a5a1aa9d9b56b2f.setIcon(icon_593ce7efaa247fe857de721726b3226f);
+        
+    
+        var popup_924bbaa095e0d834a6fd9c50da911a86 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_82d5337f19dce71d1f598ff2f94fcedc = $(`<div id="html_82d5337f19dce71d1f598ff2f94fcedc" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>ASSOCIAÇÃO COMUNITÁRIA DO BRASIL CENTRAL</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 0.60 km</p>         <a href="https://www.ongsbrasil.com.br/default.asp?Pag=2&Destino=InstituicoesTemplate&CodigoInstituicao=13&Instituicao=ASSOCIACAO%20COMUNITARIA%20DO%20BRASIL%20CENTRAL" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_924bbaa095e0d834a6fd9c50da911a86.setContent(html_82d5337f19dce71d1f598ff2f94fcedc);
+            
+        
+
+        marker_eacef3e74512f5a46a5a1aa9d9b56b2f.bindPopup(popup_924bbaa095e0d834a6fd9c50da911a86)
+        ;
+
+        
+    
+    
+            var marker_c91b5eca2e726ebe3e5785f57dd5e009 = L.marker(
+                [-15.83015, -48.03221],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_32f559904c4ae77f64601a8a77ebb176 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c91b5eca2e726ebe3e5785f57dd5e009.setIcon(icon_32f559904c4ae77f64601a8a77ebb176);
+        
+    
+        var popup_3d5bc8692e1740b39a249b5aa00ee34e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_80f2014b79f7ac933dbb2e62a51c7ac4 = $(`<div id="html_80f2014b79f7ac933dbb2e62a51c7ac4" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação Humana Povo para Povo Brasil</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 14.39 km</p>         <a href="https://www.humanabrasil.org/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_3d5bc8692e1740b39a249b5aa00ee34e.setContent(html_80f2014b79f7ac933dbb2e62a51c7ac4);
+            
+        
+
+        marker_c91b5eca2e726ebe3e5785f57dd5e009.bindPopup(popup_3d5bc8692e1740b39a249b5aa00ee34e)
+        ;
+
+        
+    
+    
+            var marker_bc59b2eb8b8c88c386cdd6ccb785600f = L.marker(
+                [-15.67984, -47.86343],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_9e9c3f8b0b2ab9aac9b38df138443afe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bc59b2eb8b8c88c386cdd6ccb785600f.setIcon(icon_9e9c3f8b0b2ab9aac9b38df138443afe);
+        
+    
+        var popup_4b04a709128253efa674c06bdbd47c7e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f2811cc58442076dc8170cb379779ce7 = $(`<div id="html_f2811cc58442076dc8170cb379779ce7" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>INSTITUTO DE COOPERAÇÃO FALA BRASIL - ICFB</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 14.16 km</p>         <a href="http://icfbcaesguia.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_4b04a709128253efa674c06bdbd47c7e.setContent(html_f2811cc58442076dc8170cb379779ce7);
+            
+        
+
+        marker_bc59b2eb8b8c88c386cdd6ccb785600f.bindPopup(popup_4b04a709128253efa674c06bdbd47c7e)
+        ;
+
+        
+    
+    
+            var marker_d77fb54b9c0f8c7b115bcedbd8a599b6 = L.marker(
+                [-15.78913, -47.88684],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_ba78d9d51e173017a0eff1173cd4ef7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d77fb54b9c0f8c7b115bcedbd8a599b6.setIcon(icon_ba78d9d51e173017a0eff1173cd4ef7f);
+        
+    
+        var popup_c96d7c1aaaa0c6e4f339a13af668feb9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f1671602487696aea418336595163754 = $(`<div id="html_f1671602487696aea418336595163754" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>ASSOCIAÇÃO DE MULHERES EMPREENDEDORAS</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 2.12 km</p>         <a href="https://www.empreendedorasbrusa.com/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_c96d7c1aaaa0c6e4f339a13af668feb9.setContent(html_f1671602487696aea418336595163754);
+            
+        
+
+        marker_d77fb54b9c0f8c7b115bcedbd8a599b6.bindPopup(popup_c96d7c1aaaa0c6e4f339a13af668feb9)
+        ;
+
+        
+    
+    
+            var marker_766d8b7735145ef0f5ea387cb8a20153 = L.marker(
+                [-15.26797, -47.98293],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_fb48ac941e02c7c94dc80192f8a21a7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_766d8b7735145ef0f5ea387cb8a20153.setIcon(icon_fb48ac941e02c7c94dc80192f8a21a7f);
+        
+    
+        var popup_1505486a3f263916b625841b364c49b7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31db4502fe7aaa74c4c6c6378689e46c = $(`<div id="html_31db4502fe7aaa74c4c6c6378689e46c" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação Brasil Melhor</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 59.81 km</p>         <a href="https://www.abmbrasil.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_1505486a3f263916b625841b364c49b7.setContent(html_31db4502fe7aaa74c4c6c6378689e46c);
+            
+        
+
+        marker_766d8b7735145ef0f5ea387cb8a20153.bindPopup(popup_1505486a3f263916b625841b364c49b7)
+        ;
+
+        
+    
+    
+            var marker_7a190c2a917f09583255cc019c8e892d = L.marker(
+                [-15.80765, -48.01593],
+                {}
+            ).addTo(feature_group_b429da5269e5e229e506176dd23a1e37);
+        
+    
+            var icon_915db3059d3006cfbb52306af33ad293 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7a190c2a917f09583255cc019c8e892d.setIcon(icon_915db3059d3006cfbb52306af33ad293);
+        
+    
+        var popup_6b3c71fe8d4bf538cd4fafaf6f9f0d3d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ad3faa562b064a3cd2f48f2dff356489 = $(`<div id="html_ad3faa562b064a3cd2f48f2dff356489" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Associação de Moradores de Vicente Pires</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 12.33 km</p>         <a href="https://amovipe.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_6b3c71fe8d4bf538cd4fafaf6f9f0d3d.setContent(html_ad3faa562b064a3cd2f48f2dff356489);
+            
+        
+
+        marker_7a190c2a917f09583255cc019c8e892d.bindPopup(popup_6b3c71fe8d4bf538cd4fafaf6f9f0d3d)
+        ;
+
+        
+    
+    
+            feature_group_b429da5269e5e229e506176dd23a1e37.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var feature_group_2594cf39a3280ac0fb1004c65a879106 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_16e6b29db7b091856cca41fbef9d3336 = L.marker(
+                [-15.82981, -48.05763],
+                {}
+            ).addTo(feature_group_2594cf39a3280ac0fb1004c65a879106);
+        
+    
+            var icon_33badc0ec57d349498150a9ccffd73c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_16e6b29db7b091856cca41fbef9d3336.setIcon(icon_33badc0ec57d349498150a9ccffd73c3);
+        
+    
+        var popup_e0d51f7d29a485a79d2dd234a7b24e54 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8511a602fed48790fe9f44772eac31f3 = $(`<div id="html_8511a602fed48790fe9f44772eac31f3" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Academia Taguatinguense de Letras</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 17.05 km</p>         <a href="https://www.facebook.com/AcademiaTaguatinguenseDeLetras/?locale=pt_BR" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_e0d51f7d29a485a79d2dd234a7b24e54.setContent(html_8511a602fed48790fe9f44772eac31f3);
+            
+        
+
+        marker_16e6b29db7b091856cca41fbef9d3336.bindPopup(popup_e0d51f7d29a485a79d2dd234a7b24e54)
+        ;
+
+        
+    
+    
+            var marker_c44283eb84d24bb776c53d81dae733c1 = L.marker(
+                [-15.77796, -47.88902],
+                {}
+            ).addTo(feature_group_2594cf39a3280ac0fb1004c65a879106);
+        
+    
+            var icon_edb5361dbb44d9650445f07d1f2735ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c44283eb84d24bb776c53d81dae733c1.setIcon(icon_edb5361dbb44d9650445f07d1f2735ed);
+        
+    
+        var popup_7588e71f9c80b2e867917b29932edb09 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_149eaa83bca912c9593eb7187b1fddc1 = $(`<div id="html_149eaa83bca912c9593eb7187b1fddc1" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Valor Cultural</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 3.01 km</p>         <a href="https://valorcultural.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_7588e71f9c80b2e867917b29932edb09.setContent(html_149eaa83bca912c9593eb7187b1fddc1);
+            
+        
+
+        marker_c44283eb84d24bb776c53d81dae733c1.bindPopup(popup_7588e71f9c80b2e867917b29932edb09)
+        ;
+
+        
+    
+    
+            var marker_efd9cbc95cd9e67bab3f1ed9fd0eb082 = L.marker(
+                [-15.80049, -47.92538],
+                {}
+            ).addTo(feature_group_2594cf39a3280ac0fb1004c65a879106);
+        
+    
+            var icon_3b332aee3906f53b31a87b4fab400651 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_efd9cbc95cd9e67bab3f1ed9fd0eb082.setIcon(icon_3b332aee3906f53b31a87b4fab400651);
+        
+    
+        var popup_b3aa4eedd008a2a30f1294b874c84f3b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e1edcd25bdccf589780a59471f1a18e = $(`<div id="html_6e1edcd25bdccf589780a59471f1a18e" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>ARTE VIDA</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 2.63 km</p>         <a href="https://www.instagram.com/academia_artevida/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_b3aa4eedd008a2a30f1294b874c84f3b.setContent(html_6e1edcd25bdccf589780a59471f1a18e);
+            
+        
+
+        marker_efd9cbc95cd9e67bab3f1ed9fd0eb082.bindPopup(popup_b3aa4eedd008a2a30f1294b874c84f3b)
+        ;
+
+        
+    
+    
+            var marker_e406b80014e2bd9668ed58dd23cbbcfb = L.marker(
+                [-15.77984, -47.9878],
+                {}
+            ).addTo(feature_group_2594cf39a3280ac0fb1004c65a879106);
+        
+    
+            var icon_21d6f45f4b2fc5d265fc7fa3be8394d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e406b80014e2bd9668ed58dd23cbbcfb.setIcon(icon_21d6f45f4b2fc5d265fc7fa3be8394d2);
+        
+    
+        var popup_0a34d9b254a6f823b7ea53675a8f33b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_496b23bc5ebbf1d427cdff76ad408373 = $(`<div id="html_496b23bc5ebbf1d427cdff76ad408373" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Reciclando Sons</h4>         <p style="font-size: 16px; color: black;"><b>Distância:</b> 9.64 km</p>         <a href="https://reciclandosons.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
+                popup_0a34d9b254a6f823b7ea53675a8f33b0.setContent(html_496b23bc5ebbf1d427cdff76ad408373);
+            
+        
+
+        marker_e406b80014e2bd9668ed58dd23cbbcfb.bindPopup(popup_0a34d9b254a6f823b7ea53675a8f33b0)
+        ;
+
+        
+    
+    
+            feature_group_2594cf39a3280ac0fb1004c65a879106.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var feature_group_0d6f5c4777ef1e7766446589dbc8b949 = L.featureGroup(
+                {}
+            );
+        
+    
+            var poly_line_c763e4a0409582fb68d66f997982608a = L.polyline(
                 [[-15.80257, -47.90094], [-15.89047, -48.11012]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_fc2bd59b1682f4f4d451b7d10a239b7e.bindTooltip(
+            poly_line_c763e4a0409582fb68d66f997982608a.bindTooltip(
                 `<div>
                      Casa Azul - 24.43 km
                  </div>`,
@@ -104,13 +1169,13 @@
             );
         
     
-            var poly_line_d4fab6f0a0f64190a7ea3cba00203766 = L.polyline(
+            var poly_line_15f9d3885645d9986f3992a7591eb636 = L.polyline(
                 [[-15.80257, -47.90094], [-15.80078, -48.10743]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_d4fab6f0a0f64190a7ea3cba00203766.bindTooltip(
+            poly_line_15f9d3885645d9986f3992a7591eb636.bindTooltip(
                 `<div>
                      CASA DA CRIANÇA BATUÍRA - 22.12 km
                  </div>`,
@@ -118,13 +1183,13 @@
             );
         
     
-            var poly_line_c0bab2f88af027f9a05a193162ed0503 = L.polyline(
+            var poly_line_c0301a2b5701f7d9d19477302aa2b3d1 = L.polyline(
                 [[-15.80257, -47.90094], [-15.81243, -48.01925]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_c0bab2f88af027f9a05a193162ed0503.bindTooltip(
+            poly_line_c0301a2b5701f7d9d19477302aa2b3d1.bindTooltip(
                 `<div>
                      Instituto Menos de Mim - 12.72 km
                  </div>`,
@@ -132,13 +1197,13 @@
             );
         
     
-            var poly_line_e89734d11c5f0b45a8dd7a3e7af17d48 = L.polyline(
+            var poly_line_cfad44644feb780a9eecc6d41f995891 = L.polyline(
                 [[-15.80257, -47.90094], [-15.8176, -48.09161]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_e89734d11c5f0b45a8dd7a3e7af17d48.bindTooltip(
+            poly_line_cfad44644feb780a9eecc6d41f995891.bindTooltip(
                 `<div>
                      Instituto do Carinho - 20.50 km
                  </div>`,
@@ -146,13 +1211,13 @@
             );
         
     
-            var poly_line_2b8cf017b2635914b7bcdaaa8d85a160 = L.polyline(
+            var poly_line_29fb38bfb0f8cc835c39a91b87a814ea = L.polyline(
                 [[-15.80257, -47.90094], [-15.77814, -47.99886]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_2b8cf017b2635914b7bcdaaa8d85a160.bindTooltip(
+            poly_line_29fb38bfb0f8cc835c39a91b87a814ea.bindTooltip(
                 `<div>
                      Instituto Social Bom Samaritano - 10.83 km
                  </div>`,
@@ -160,13 +1225,13 @@
             );
         
     
-            var poly_line_a69c2cab18ee6ba62a4469ac75bb480a = L.polyline(
+            var poly_line_ec2261fb59a335a5fc4bbe6f7df75006 = L.polyline(
                 [[-15.80257, -47.90094], [-15.88858, -48.10162]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_a69c2cab18ee6ba62a4469ac75bb480a.bindTooltip(
+            poly_line_ec2261fb59a335a5fc4bbe6f7df75006.bindTooltip(
                 `<div>
                      SHALKE12 - 23.51 km
                  </div>`,
@@ -174,257 +1239,433 @@
             );
         
     
-            var poly_line_07f19d584b1615d4a9f172791e10ba02 = L.polyline(
-                [[-15.80257, -47.90094], [-16.053542956726478, -47.6194086905541]],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            var poly_line_7791793a4e50a655304e70690a0ad03e = L.polyline(
+                [[-15.80257, -47.90094], [-15.78318, -47.88298]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            poly_line_07f19d584b1615d4a9f172791e10ba02.bindTooltip(
+            poly_line_7791793a4e50a655304e70690a0ad03e.bindTooltip(
                 `<div>
-                     SHALKE12 - 40.99 km
+                     Projeto Dividir - 2.88 km
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var feature_group_fca2d41bac99dff5603bb1518bd2ca89 = L.featureGroup(
-                {}
+            var poly_line_7afa7bceec200caf2a5b9a525e4d8bb1 = L.polyline(
+                [[-15.80257, -47.90094], [-15.81141, -47.97513]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_7afa7bceec200caf2a5b9a525e4d8bb1.bindTooltip(
+                `<div>
+                     Instituto Adenilson Cruz - 8.01 km
+                 </div>`,
+                {"sticky": true}
             );
         
     
-            var marker_84421747290109f6f638648fc2a6c1e6 = L.marker(
-                [-15.89047, -48.11012],
-                {}
-            ).addTo(feature_group_fca2d41bac99dff5603bb1518bd2ca89);
+            var poly_line_d7f91c533038f5ac490d1b80bfb95e5e = L.polyline(
+                [[-15.80257, -47.90094], [-15.80045, -48.10632]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            var icon_19cb88084e7dd7c14dcc6e6c33aa19a5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_84421747290109f6f638648fc2a6c1e6.setIcon(icon_19cb88084e7dd7c14dcc6e6c33aa19a5);
-        
-    
-        var popup_944896e4353c0021ad0a9ff19e5766f3 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_4a7f598cef22b5401658f049419ab5d7 = $(`<div id="html_4a7f598cef22b5401658f049419ab5d7" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Casa Azul</h4>         <p style="font-size: 16px";><b>Distância:</b> 24.43 km</p>         <a href="https://www.casazulfelipeaugusto.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_944896e4353c0021ad0a9ff19e5766f3.setContent(html_4a7f598cef22b5401658f049419ab5d7);
-            
-        
-
-        marker_84421747290109f6f638648fc2a6c1e6.bindPopup(popup_944896e4353c0021ad0a9ff19e5766f3)
-        ;
-
-        
-    
-    
-            var marker_31638722b2b68535a8b2af0e409fb72d = L.marker(
-                [-15.8176, -48.09161],
-                {}
-            ).addTo(feature_group_fca2d41bac99dff5603bb1518bd2ca89);
-        
-    
-            var icon_65b87624f7b2f390794f8ac579fd60e5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_31638722b2b68535a8b2af0e409fb72d.setIcon(icon_65b87624f7b2f390794f8ac579fd60e5);
-        
-    
-        var popup_544cbd8450c5cfe8f44ee04fc36876b4 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_86c79fc956996469638aab2bdeb90ce9 = $(`<div id="html_86c79fc956996469638aab2bdeb90ce9" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto do Carinho</h4>         <p style="font-size: 16px";><b>Distância:</b> 20.50 km</p>         <a href="https://www.institutodocarinho.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_544cbd8450c5cfe8f44ee04fc36876b4.setContent(html_86c79fc956996469638aab2bdeb90ce9);
-            
-        
-
-        marker_31638722b2b68535a8b2af0e409fb72d.bindPopup(popup_544cbd8450c5cfe8f44ee04fc36876b4)
-        ;
-
-        
-    
-    
-            feature_group_fca2d41bac99dff5603bb1518bd2ca89.addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
-        
-    
-            var feature_group_6442a796e5b0d5d1ab362b5e9e63e0d2 = L.featureGroup(
-                {}
+            poly_line_d7f91c533038f5ac490d1b80bfb95e5e.bindTooltip(
+                `<div>
+                     Lar de São José - 22.01 km
+                 </div>`,
+                {"sticky": true}
             );
         
     
-            var marker_9145eaf6d85091dfa27d94ccbb2fe10f = L.marker(
-                [-15.80078, -48.10743],
-                {}
-            ).addTo(feature_group_6442a796e5b0d5d1ab362b5e9e63e0d2);
+            var poly_line_569b9a16c3bf61c37e11bc76aa95f5a2 = L.polyline(
+                [[-15.80257, -47.90094], [-15.64378, -47.82077]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            var icon_a93fa3af9e108b0a60f4470613eb37c6 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_9145eaf6d85091dfa27d94ccbb2fe10f.setIcon(icon_a93fa3af9e108b0a60f4470613eb37c6);
-        
-    
-        var popup_129380313e1d1da78bc3cf3aa55d8c74 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_592ea7715dd5b8b56454ea035e544a9c = $(`<div id="html_592ea7715dd5b8b56454ea035e544a9c" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>CASA DA CRIANÇA BATUÍRA</h4>         <p style="font-size: 16px";><b>Distância:</b> 22.12 km</p>         <a href="https://www.ccbatuira.org.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_129380313e1d1da78bc3cf3aa55d8c74.setContent(html_592ea7715dd5b8b56454ea035e544a9c);
-            
-        
-
-        marker_9145eaf6d85091dfa27d94ccbb2fe10f.bindPopup(popup_129380313e1d1da78bc3cf3aa55d8c74)
-        ;
-
-        
-    
-    
-            var marker_6b3d35043497cd542ce194dd0b6f8c25 = L.marker(
-                [-15.77814, -47.99886],
-                {}
-            ).addTo(feature_group_6442a796e5b0d5d1ab362b5e9e63e0d2);
-        
-    
-            var icon_e05d047b105e3d6291e0bea9b5f7d701 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_6b3d35043497cd542ce194dd0b6f8c25.setIcon(icon_e05d047b105e3d6291e0bea9b5f7d701);
-        
-    
-        var popup_1b7ac392590c923cc81f638aae548910 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_7cf8adf912c8fd6f04851bb594d23d91 = $(`<div id="html_7cf8adf912c8fd6f04851bb594d23d91" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Social Bom Samaritano</h4>         <p style="font-size: 16px";><b>Distância:</b> 10.83 km</p>         <a href="https://www.instagram.com/ibs.social/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_1b7ac392590c923cc81f638aae548910.setContent(html_7cf8adf912c8fd6f04851bb594d23d91);
-            
-        
-
-        marker_6b3d35043497cd542ce194dd0b6f8c25.bindPopup(popup_1b7ac392590c923cc81f638aae548910)
-        ;
-
-        
-    
-    
-            feature_group_6442a796e5b0d5d1ab362b5e9e63e0d2.addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
-        
-    
-            var feature_group_0bcb19d398a70630d32f88d9ccb4dc62 = L.featureGroup(
-                {}
+            poly_line_569b9a16c3bf61c37e11bc76aa95f5a2.bindTooltip(
+                `<div>
+                     Associação das Mulheres de Sobradinho II - 19.56 km
+                 </div>`,
+                {"sticky": true}
             );
         
     
-            var marker_9cb09cfbbf40272bb9cf30564a7a800f = L.marker(
-                [-15.81243, -48.01925],
-                {}
-            ).addTo(feature_group_0bcb19d398a70630d32f88d9ccb4dc62);
+            var poly_line_d475f3cdeca439ddca994717e9350e60 = L.polyline(
+                [[-15.80257, -47.90094], [-15.74881, -47.89895]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            var icon_b6930cf212b3cc9f478bc5d9c9d27558 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_9cb09cfbbf40272bb9cf30564a7a800f.setIcon(icon_b6930cf212b3cc9f478bc5d9c9d27558);
-        
-    
-        var popup_e8cbfeb5b3e6dbc770a2bae3bbeb3630 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_abf5b5ad60ff15fc04af271625aa708b = $(`<div id="html_abf5b5ad60ff15fc04af271625aa708b" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Instituto Menos de Mim</h4>         <p style="font-size: 16px";><b>Distância:</b> 12.72 km</p>         <a href="https://menosdemim.apoiar.co/2" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_e8cbfeb5b3e6dbc770a2bae3bbeb3630.setContent(html_abf5b5ad60ff15fc04af271625aa708b);
-            
-        
-
-        marker_9cb09cfbbf40272bb9cf30564a7a800f.bindPopup(popup_e8cbfeb5b3e6dbc770a2bae3bbeb3630)
-        ;
-
-        
-    
-    
-            feature_group_0bcb19d398a70630d32f88d9ccb4dc62.addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
-        
-    
-            var feature_group_b083b919f0740a20c846d2e989f0c481 = L.featureGroup(
-                {}
+            poly_line_d475f3cdeca439ddca994717e9350e60.bindTooltip(
+                `<div>
+                     Casa de Ismael - 5.95 km
+                 </div>`,
+                {"sticky": true}
             );
         
     
-            var marker_df2ceab2a497d480ac0d3585d7901195 = L.marker(
-                [-15.88858, -48.10162],
-                {}
-            ).addTo(feature_group_b083b919f0740a20c846d2e989f0c481);
+            var poly_line_caed35f6a1b8a013f129527907c39632 = L.polyline(
+                [[-15.80257, -47.90094], [-15.70916, -47.87607]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-            var icon_aaa7d528414cba5207893cad49a8a0b1 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            poly_line_caed35f6a1b8a013f129527907c39632.bindTooltip(
+                `<div>
+                     Instituto Migrações e Direitos Humanos (IMDH) - 10.67 km
+                 </div>`,
+                {"sticky": true}
             );
-            marker_df2ceab2a497d480ac0d3585d7901195.setIcon(icon_aaa7d528414cba5207893cad49a8a0b1);
         
     
-        var popup_94397b47f033d3cc6b12a10d9e3de942 = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_bf1643a9e3beac1bece8696eb924edba = $(`<div id="html_bf1643a9e3beac1bece8696eb924edba" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>SHALKE12</h4>         <p style="font-size: 16px";><b>Distância:</b> 23.51 km</p>         <a href="https://shalke12.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_94397b47f033d3cc6b12a10d9e3de942.setContent(html_bf1643a9e3beac1bece8696eb924edba);
-            
-        
-
-        marker_df2ceab2a497d480ac0d3585d7901195.bindPopup(popup_94397b47f033d3cc6b12a10d9e3de942)
-        ;
-
+            var poly_line_14802fbaa441c040cbed80403d7890e1 = L.polyline(
+                [[-15.80257, -47.90094], [-15.64365, -47.82247]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-    
-            var marker_4a89f0512ba9bb6cb1170f0d1afaf45e = L.marker(
-                [-16.053542956726478, -47.6194086905541],
-                {}
-            ).addTo(feature_group_b083b919f0740a20c846d2e989f0c481);
-        
-    
-            var icon_1f9c137bce09cd206b73d8d38adb3ae7 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            poly_line_14802fbaa441c040cbed80403d7890e1.bindTooltip(
+                `<div>
+                     Centro Comunitário Semente de Esperança - 19.49 km
+                 </div>`,
+                {"sticky": true}
             );
-            marker_4a89f0512ba9bb6cb1170f0d1afaf45e.setIcon(icon_1f9c137bce09cd206b73d8d38adb3ae7);
         
     
-        var popup_48b3d8f0ef43fa03760bed8b0b2f758c = L.popup({"maxWidth": 300});
-
-        
-            
-                var html_a7fe9ccc3297e6b3ada30b42be713169 = $(`<div id="html_a7fe9ccc3297e6b3ada30b42be713169" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>SHALKE12</h4>         <p style="font-size: 16px";><b>Distância:</b> 40.99 km</p>         <a href="https://shalke12.com.br/" target="_blank">Visitar site</a>     </div>     </div>`)[0];
-                popup_48b3d8f0ef43fa03760bed8b0b2f758c.setContent(html_a7fe9ccc3297e6b3ada30b42be713169);
-            
-        
-
-        marker_4a89f0512ba9bb6cb1170f0d1afaf45e.bindPopup(popup_48b3d8f0ef43fa03760bed8b0b2f758c)
-        ;
-
+            var poly_line_a68b687407d1d6a3478aae2e0a14c19a = L.polyline(
+                [[-15.80257, -47.90094], [-15.77815, -47.99836]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
         
     
-    
-            feature_group_b083b919f0740a20c846d2e989f0c481.addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            poly_line_a68b687407d1d6a3478aae2e0a14c19a.bindTooltip(
+                `<div>
+                     Instituto Bom Samaritano - 10.78 km
+                 </div>`,
+                {"sticky": true}
+            );
         
     
-            var layer_control_a25a42b9aa9d12d7ca3fd2c8f7a15d17_layers = {
+            var poly_line_999e3f4c3f8d9ac32a2286b61b518020 = L.polyline(
+                [[-15.80257, -47.90094], [-15.83023, -48.09816]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_999e3f4c3f8d9ac32a2286b61b518020.bindTooltip(
+                `<div>
+                     Associação Dos Idosos Da Ceilândia - 21.35 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_a7a24aea29c640b21f93c28fcbea2400 = L.polyline(
+                [[-15.80257, -47.90094], [-15.82046, -48.08388]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_a7a24aea29c640b21f93c28fcbea2400.bindTooltip(
+                `<div>
+                     Associação Dos Idosos De Taguatinga - 19.70 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_3c8ac60b8589c9be8f5f89da739f3d84 = L.polyline(
+                [[-15.80257, -47.90094], [-15.80645, -47.90491]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_3c8ac60b8589c9be8f5f89da739f3d84.bindTooltip(
+                `<div>
+                     ASSOCIAÇÃO COMUNITÁRIA DO BRASIL CENTRAL - 0.60 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_74fc16853234c773beeace12d3ac8895 = L.polyline(
+                [[-15.80257, -47.90094], [-15.83015, -48.03221]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_74fc16853234c773beeace12d3ac8895.bindTooltip(
+                `<div>
+                     Associação Humana Povo para Povo Brasil - 14.39 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7d9145cd105e57de2a30b409456dfa34 = L.polyline(
+                [[-15.80257, -47.90094], [-15.82735, -48.09153]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_7d9145cd105e57de2a30b409456dfa34.bindTooltip(
+                `<div>
+                     CRECHE FREDERICO OZANAM - 20.60 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_35f0ade51940ac71646a7111c6507808 = L.polyline(
+                [[-15.80257, -47.90094], [-15.74771, -47.89971]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_35f0ade51940ac71646a7111c6507808.bindTooltip(
+                `<div>
+                     Instituto Berço da Cidadania - 6.07 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_a151bd46296e3fb4d676c4ac242db7f1 = L.polyline(
+                [[-15.80257, -47.90094], [-15.67984, -47.86343]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_a151bd46296e3fb4d676c4ac242db7f1.bindTooltip(
+                `<div>
+                     INSTITUTO DE COOPERAÇÃO FALA BRASIL - ICFB - 14.16 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6d02a63c422388d07f044127eaed52b3 = L.polyline(
+                [[-15.80257, -47.90094], [-15.79987, -48.10653]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_6d02a63c422388d07f044127eaed52b3.bindTooltip(
+                `<div>
+                     LAR DE SÃO JOSÉ - 22.03 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7d8500006b1665869da62bc98d776019 = L.polyline(
+                [[-15.80257, -47.90094], [-15.78913, -47.88684]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_7d8500006b1665869da62bc98d776019.bindTooltip(
+                `<div>
+                     ASSOCIAÇÃO DE MULHERES EMPREENDEDORAS - 2.12 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_c904085ab398b0802e45f82aa7f84ae0 = L.polyline(
+                [[-15.80257, -47.90094], [-15.82981, -48.05763]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_c904085ab398b0802e45f82aa7f84ae0.bindTooltip(
+                `<div>
+                     Academia Taguatinguense de Letras - 17.05 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_3beea68750d47c397a81b482c01c74c8 = L.polyline(
+                [[-15.80257, -47.90094], [-15.77796, -47.88902]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_3beea68750d47c397a81b482c01c74c8.bindTooltip(
+                `<div>
+                     Valor Cultural - 3.01 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_55d873fe511701a9d31a0710c1a8293f = L.polyline(
+                [[-15.80257, -47.90094], [-15.80049, -47.92538]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_55d873fe511701a9d31a0710c1a8293f.bindTooltip(
+                `<div>
+                     ARTE VIDA - 2.63 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ecca88de92cbf8a073bef6342c810baf = L.polyline(
+                [[-15.80257, -47.90094], [-15.26797, -47.98293]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_ecca88de92cbf8a073bef6342c810baf.bindTooltip(
+                `<div>
+                     Associação Brasil Melhor - 59.81 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f2b1a2a8154d170274363f0ce8336419 = L.polyline(
+                [[-15.80257, -47.90094], [-15.67003, -47.64807]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_f2b1a2a8154d170274363f0ce8336419.bindTooltip(
+                `<div>
+                     Casa Transitória de Brasília - 30.82 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d194dcdc546455e44b8dd847be26bca7 = L.polyline(
+                [[-15.80257, -47.90094], [-15.74767, -47.90067]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_d194dcdc546455e44b8dd847be26bca7.bindTooltip(
+                `<div>
+                     Instituto Tocar - 6.08 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_53156114fb9526fc50e2de8f67da8e2a = L.polyline(
+                [[-15.80257, -47.90094], [-16.01587, -48.13727]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_53156114fb9526fc50e2de8f67da8e2a.bindTooltip(
+                `<div>
+                     Abrigo Flora e Fauna - 34.61 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f3964697d74402deaefce0f453c9c8cb = L.polyline(
+                [[-15.80257, -47.90094], [-15.68625, -47.92592]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_f3964697d74402deaefce0f453c9c8cb.bindTooltip(
+                `<div>
+                     Amigos da Vida - 13.15 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7249c19b0010d28396a694d37c9c0636 = L.polyline(
+                [[-15.80257, -47.90094], [-15.84205, -47.02225]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_7249c19b0010d28396a694d37c9c0636.bindTooltip(
+                `<div>
+                     Associação Brasiliense de Apoio ao Paciente de Câncer (ABAC) - 94.23 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_c70b67f0317a144a73968d927c7575cb = L.polyline(
+                [[-15.80257, -47.90094], [-15.80765, -48.01593]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_c70b67f0317a144a73968d927c7575cb.bindTooltip(
+                `<div>
+                     Associação de Moradores de Vicente Pires - 12.33 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_b7746045a281a2f82f8568e115a1cf83 = L.polyline(
+                [[-15.80257, -47.90094], [-15.77984, -47.9878]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_b7746045a281a2f82f8568e115a1cf83.bindTooltip(
+                `<div>
+                     Instituto Reciclando Sons - 9.64 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d5118c5c523bb730fe4662c93b363583 = L.polyline(
+                [[-15.80257, -47.90094], [-15.78946, -47.88531]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_0d6f5c4777ef1e7766446589dbc8b949);
+        
+    
+            poly_line_d5118c5c523bb730fe4662c93b363583.bindTooltip(
+                `<div>
+                     ONG Vida Positiva - 2.22 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_0d6f5c4777ef1e7766446589dbc8b949.addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
+        
+    
+            var layer_control_4e10efb0ad0ddb769803601a8b58cbf7_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_9fbef1ff105e0bc2ca7c6a453cb245f7,
+                    "openstreetmap" : tile_layer_d483b8a3f21948b9f83be0d9e1f143df,
                 },
                 overlays :  {
-                    "Educa\u00e7\u00e3o" : feature_group_fca2d41bac99dff5603bb1518bd2ca89,
-                    "Sa\u00fade" : feature_group_6442a796e5b0d5d1ab362b5e9e63e0d2,
-                    "Alimenta\u00e7\u00e3o" : feature_group_0bcb19d398a70630d32f88d9ccb4dc62,
-                    "Outros" : feature_group_b083b919f0740a20c846d2e989f0c481,
+                    "Educa\u00e7\u00e3o" : feature_group_c590ca7c9f46efa2f806eed48a754892,
+                    "Sa\u00fade" : feature_group_fc3d1d2d90fe75de340ae8969df2c15e,
+                    "Alimenta\u00e7\u00e3o" : feature_group_904205aaff2a92f352b1ed6784353395,
+                    "Outros" : feature_group_b429da5269e5e229e506176dd23a1e37,
+                    "Cultura" : feature_group_2594cf39a3280ac0fb1004c65a879106,
+                    "Mostrar Dist\u00e2ncias" : feature_group_0d6f5c4777ef1e7766446589dbc8b949,
                 },
             };
-            let layer_control_a25a42b9aa9d12d7ca3fd2c8f7a15d17 = L.control.layers(
-                layer_control_a25a42b9aa9d12d7ca3fd2c8f7a15d17_layers.base_layers,
-                layer_control_a25a42b9aa9d12d7ca3fd2c8f7a15d17_layers.overlays,
+            let layer_control_4e10efb0ad0ddb769803601a8b58cbf7 = L.control.layers(
+                layer_control_4e10efb0ad0ddb769803601a8b58cbf7_layers.base_layers,
+                layer_control_4e10efb0ad0ddb769803601a8b58cbf7_layers.overlays,
                 {"autoZIndex": true, "collapsed": false, "position": "topright"}
-            ).addTo(map_7e61bfa3ba9f785fe732a562fde7ea80);
+            ).addTo(map_db7678ca6f792666ad6a0d0a0879e0af);
 
         
 </script>
